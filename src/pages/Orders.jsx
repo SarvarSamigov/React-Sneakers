@@ -30,7 +30,10 @@ function Orders() {
 
       <div className="d-flex flex-wrap">
         {(isLoading ? [...Array(8)] : orders).map((item, index) => (
-          <Card key={index} loading={isLoading} {...item} />
+          <Card key={index} 
+          onFavorite={(obj) => {onAddToFavorite(obj)}} 
+          onPlus={(obj) => {onAddToCart(obj)}} 
+          loading={isLoading} {...item} />
         ))}
       </div>
     </div>
